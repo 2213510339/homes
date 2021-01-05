@@ -1,0 +1,127 @@
+#react-app {
+    .primary-layout {
+        .title-container {
+            border-bottom: 1px solid #EBEBEB;
+            background: #fff;
+            text-align: center;
+            .logo {
+                margin-left: 0;
+            }
+            .title {
+                display: inline-block;
+                font-size: 14px;
+                vertical-align: middle;
+                color: #666;
+            }
+        }
+        .main-area {
+            position: relative;
+            padding: 0;
+            .main-content .biz-content {
+                padding: 22px 20px;
+            }
+        }
+        .main-layout {
+            min-height: calc(100vh - 65px);
+        }
+        .ant-layout-sider-trigger {
+            display: none;
+        }
+    }
+
+    .custom-layout,
+    .ant-layout-sider {
+        overflow: hidden;
+        border-right: 1px solid #EBEBEB;
+        .ant-menu {
+            .ant-menu-item,
+            .ant-menu-submenu-title {
+                a,
+                span {
+                    color: #333;
+                }
+                &:hover {
+                    background-color: #EAF6FE;
+                }
+            }
+            .ant-menu-submenu-selected,
+            .ant-menu-submenu-open {
+                background: #F6F7FB;
+                .ant-menu {
+                    background: #F6F7FB;
+                }
+            }
+            .ant-menu-item-selected {
+                background: #F6F7FB;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    border-right: 4px solid #1890ff;
+                    opacity: 1;
+                }
+                &::after {
+                    display: none;
+                }
+            }
+            .ant-menu-vertical,
+            .ant-menu-vertical-left,
+            .ant-menu-vertical-right,
+            .ant-menu-inline,
+            .ant-menu-submenu-title {
+                .ant-menu-item,
+                .ant-menu-submenu-title {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+            .ant-menu-sub {
+                .ant-menu-item a::before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 4px;
+                    height: 4px;
+                    top: 17px;
+                    left: 28px;
+                    background-color: #999;
+                    border-radius: 5px;
+                }
+                .ant-menu-item:hover,
+                .ant-menu-item-selected {
+                    a::before {
+                        background-color: #1890ff;
+                    }
+                }
+            }
+        }
+        .ant-layout-sider-trigger {
+            background: #fff;
+            .anticon {
+                color: #666;
+            }
+        }
+    }
+}
+#main-sidebar,
+#header {
+    * {
+        box-sizing: initial;
+    }
+}
+
+.sidebar-collapsed {
+    .primary-layout .ant-layout-sider {
+        top: 50px;
+        left: 60px;
+    }
+}
+
+.sidebar-expanded {
+    .primary-layout .ant-layout-sider {
+        top: 50px;
+        left: 180px;
+    }
+}

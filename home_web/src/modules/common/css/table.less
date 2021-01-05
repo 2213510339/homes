@@ -1,0 +1,77 @@
+/* ant-table中的通用样式 */
+.ant-table {
+    .status {
+        display: inline-block;
+        vertical-align: middle;
+        padding-left: 16px;
+        position: relative;
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 6px;
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: #999;
+        }
+        &.normal:before {
+            background-color: @green;
+        }
+        &.normal {
+            color: @green;
+        }
+        &.error:before {
+            background-color: @red;
+        }
+        &.warning:before {
+            background-color: @yellow;
+        }
+        &.unavailable {
+            color: #999;
+            &:before {
+                background-color: #999;
+            }
+        }
+        &.loading:before {
+            background-color: @blue;
+            left: -10px;
+            animation: animation-before 1.5s;
+            animation-iteration-count: infinite;
+        }
+        &.loading:after {
+            position: absolute;
+            content: "";
+            top: 6px;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: @yellow;
+            left: 0;
+            animation: animation-after 1.5s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes animation-before {
+            0% {
+                left: -10px;
+            }
+            50% {
+                left: 0;
+            }
+            100% {
+                left: -10px;
+            }
+        }
+        @keyframes animation-after {
+            0% {
+                left: 0;
+            }
+            50% {
+                left: -10px;
+            }
+            100% {
+                left: 0;
+            }
+        }
+    }
+}

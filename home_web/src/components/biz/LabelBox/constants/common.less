@@ -1,0 +1,58 @@
+@import "./variable.less";
+
+.gdbox-labelbox-classify,
+.gdbox-labelbox-ocr-detection {
+    position: relative;
+    min-width: @gdbox-container-min-width;
+    min-height: @gdbox-container-min-height;
+    .gdbox-labelbox-main {
+        display: flex;
+        height: 100%;
+    }
+
+    // 左侧工具条样式
+    .gdbox-toolbar-wrap {
+        float: left;
+        width: @tool-com-width;
+        height: 100%;
+        .toolbar-item:first-child {
+            margin-top: 0;
+        }
+    }
+
+    // 图像或视频展示区域
+    .gdbox-labelbox-core {
+        flex: 1;
+        height: 100%;
+    }
+    .gdbox-core-wrap,
+    .gdbox-video-wrap {
+        flex: 1;
+        height: 100%;
+    }
+
+    .gdbox-video-wrap .du-cyberplayer { // override video-player'height
+        height: 100%;
+    }
+    // 标注标签样式
+    .gdbox-labels-wrap {
+        float: right;
+        width: @label-com-width;
+        height: 100%;
+        border: 1px solid @gdbox-border-color;
+        border-left-width: 0;
+    }
+}
+
+// 无标注子标签
+.gdbox-label-empty-wrap {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+}
+
+// 标注标签样式
+.gdbox-statusbar-wrap {
+    height: @status-com-height;
+    border: 1px solid @gdbox-border-color;
+}

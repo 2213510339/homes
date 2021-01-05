@@ -1,0 +1,97 @@
+//定义变量
+@page-theme: #1890ff;
+@status-toolbar-height: 50px;
+
+.gdbox-labelbox {
+    overflow: hidden;
+    position: relative;
+    .gdbox-labelbox-main {
+        height: 100%;
+        .label-box-l {
+            float: left;
+            height: calc(~"100% - @{status-toolbar-height}");
+            .label-tool-item {
+                width: 35px;
+                padding: 3px 0;
+                cursor: pointer;
+                background-color: #EAF6FE;
+                color: @page-theme;
+                text-align: center;
+                margin-bottom: 20px;
+                line-height: 1.7;
+                .tool-tip {
+                    display: block;
+                    font-size: 12px;
+                }
+            }
+            .label-tool-item:hover {
+                background-color: #d2ecfd;
+            }
+            .label-tool-item-active {
+                color: #fff;
+                background-color: @page-theme;
+            }
+            .label-tool-item-active:hover {
+                background-color: @page-theme;
+            }
+        }
+        .label-box-r {
+            float: right;
+            width: 180px;
+            height: calc(~"100% - @{status-toolbar-height}");
+            border: 1px solid #ECEFF8;
+            background-color: #FAFBFB;
+            font-size: 12px;
+            color: #333;
+            .label-r-title {
+                font-size: 14px;
+                height: 34px;
+                padding-left: 15px;
+                line-height: 34px;
+            }
+            .label-r-labels-box {
+                height: calc(~"100% - 34px");
+                overflow-y: scroll;
+                .label-item {
+                    border-top: 1px solid #ECEFF8;
+                    padding: 5px 15px;
+                    width: 100%;
+                    margin-right: 0;
+                }
+            }
+        }
+        .label-box-c {
+            border: 1px solid @page-theme;
+            margin: 0 195px 0 45px;
+            height: 100%;
+            .label-box-label {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                height: calc(~"100% - @{status-toolbar-height}");
+            }
+            .label-tool-bar {
+                position: relative;
+                text-align: center;
+                font-size: 12px;
+                height: @status-toolbar-height;
+                line-height: @status-toolbar-height;
+                .label-none-check {
+                    position: absolute;
+                    left: 10px;
+                    top: 0;
+                }
+                .label-tool-tip {
+                    position: absolute;
+                    right: 10px;
+                    top: 0;
+                    font-size: 12px;
+                    color: #999;
+                    .label-tip-num {
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}

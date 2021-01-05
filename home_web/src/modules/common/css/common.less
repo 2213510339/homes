@@ -1,0 +1,49 @@
+@green: #5FB333;
+@red: #EA2E2E;
+@yellow: #FFA500;
+@blue: #1067EE;
+@blue-hover: #3280FA;
+
+@import './layout.less';
+@import './table.less';
+
+body {
+    background-color: #e8ecf0;
+    color: #333;
+    font-size: 14px;
+}
+
+#react-app {
+    .ant-calendar-picker-input {
+        width: 100%;
+    }
+}
+
+.main-content {
+    .du-form h2,
+    .du-listpage h2,
+    .global-title {
+        margin-bottom: 20px;
+        font-size: 18px;
+        color: #333;
+        line-height: 32px;
+    }
+}
+
+.global-part-title {
+    margin-bottom: 0;
+    height: 16px;
+    line-height: 16px;
+    font-size: 16px;
+    font-weight: normal;
+    &:before {
+        content: '';
+        display: inline-block;
+        zoom: 1;
+        margin-right: 10px;
+        width: 4px;
+        height: 16px;
+        vertical-align: top;
+        background: @blue;
+    }
+}

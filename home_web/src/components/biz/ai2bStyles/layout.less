@@ -1,0 +1,343 @@
+/**
+ * @file ai2b-styles-layout 框架样式
+ * @modify sunwen05
+ */
+
+@import './variables.less';
+
+#react-app {
+    // primary
+    .primary-layout {
+        // title
+        .title-container {
+            background: #fff;
+            text-align: center;
+            line-height: @header-height;
+            height: @header-height;
+            a {
+                line-height: @header-height;
+                height: @header-height;
+            }
+            .logo {
+                margin: 0;
+                width: 30px;
+                height: 30px;
+                background: url(/static/img/logo2x.png);
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+            }
+            .title {
+                margin-left: 10px;
+                font-size: 18px;
+                vertical-align: middle;
+                color: @text-color;
+            }
+        }
+        // breadcrumb
+        .ant-breadcrumb {
+            margin: 10px 0 10px 20px;
+            a,
+            span {
+                font-size: 14px;
+            }
+            .ant-breadcrumb-link {
+                a {
+                    &:hover {
+                        color: @blue;
+                    }
+                }
+            }
+            & > span {
+                &:last-child {
+                    color: @text-color;
+                }
+            }
+        }
+        // sidebar
+        .ant-layout-sider {
+            background: @body-background-color;
+            box-shadow: 2px 0 20px 0 rgba(0, 0, 0, .1);
+            .ant-layout-sider-children {
+                & > .ant-menu {
+                    overflow-y: auto;
+                    padding-bottom: 50px;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .ant-menu-item,
+                    .ant-menu-submenu-title {
+                        a,
+                        span {
+                            font-size: 14px;
+                        }
+                    }
+                    .ant-menu-submenu-selected {
+                        .ant-menu-submenu-title > span > i {
+                            color: @blue;
+                        }
+                    }
+                    .ant-menu-item-selected {
+                        background-color: @body-background-color;
+                        a,
+                        span {
+                            color: @blue;
+                        }
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            border-right: 5px solid @blue-hover;
+                            opacity: 1;
+                        }
+                        &::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .ant-layout-sider-trigger {
+                background: #fff;
+                color: @text-color;
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .anticon {
+                    font-size: 16px;
+                }
+                span {
+                    font-size: 12px;
+                    color: @text-color;
+                }
+            }
+        }
+        // main
+        .main-layout {
+            background: @body-background-color;
+            .main-area {
+                position: relative;
+                margin-top: @header-height;
+                padding: 0;
+                background: @body-background-color;
+            }
+            .ant-layout-footer {
+                background: @body-background-color;
+            }
+        }
+    }
+    // without-sidebar
+    .without-sidebar {
+        .title-container {
+            border-bottom: 1px solid rgba(204, 204, 204, 0.35);
+            box-shadow: 20px 0 20px 0 rgba(0, 0, 0, .1);
+        }
+    }
+    // biz
+    .biz-content {
+        padding: 0;
+        background-color: @body-background-color;
+    }
+    // collapsed
+    .primary-layout-collapsed {
+        // title
+        .title-container {
+            width: @sidebar-width-collapsed;
+            .title {
+                display: none;
+            }
+        }
+        // sidebar
+        .ant-layout-sider {
+            .ant-layout-sider-trigger {
+                width: @sidebar-width-collapsed!important;
+            }
+            .ant-layout-sider-children  {
+                & > .ant-menu {
+                    width: @sidebar-width-collapsed;
+                    .ant-menu-item,
+                    .ant-menu-submenu,
+                    .ant-menu-submenu-title {
+                        padding: 0!important;
+                        text-align: center;
+                    }
+                    .ant-menu-submenu-selected {
+                        position: relative;
+                        background: @body-background-color;
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            border-right: 5px solid @blue-hover;
+                            opacity: 1;
+                            z-index: 99;
+                        }
+                    }
+                }
+            }
+        }
+        // main
+        .main-layout {
+            margin-left: @sidebar-width-collapsed;
+        }
+        // header
+        .ant-layout-header {
+            left: @sidebar-width-collapsed;
+            width: calc(~"100% - @{sidebar-width-collapsed}");
+        }
+    }
+    // header
+    .ant-layout-header {
+        padding: 0 20px;
+        border-bottom: 1px solid rgba(204, 204, 204, .35);
+        width: calc(~"100% - @{sidebar-width}");
+        height: @header-height;
+        line-height: @header-height;
+        box-shadow: 20px 0 20px 0 rgba(0, 0, 0, .1);
+        .ant-menu {
+            margin: 0;
+            border-bottom: none;
+            line-height: calc(@header-height - 1px);
+            .ant-menu-item {
+                margin: 15px 15px 15px 0;
+                border-bottom: none;
+                border-radius: @border-radius;
+                padding: 0 15px;
+                height: 29px;
+                line-height: 29px;
+                color: @text-color;
+                a,
+                span {
+                    font-size: 14px;
+                }
+                &:hover,
+                &.ant-menu-item-selected {
+                    background-color: @body-background-color;
+                }
+                &.ant-menu-item-selected {
+                    a,
+                    span {
+                        color: @blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// submenu-popup
+.ant-menu-submenu-popup {
+    z-index: 998;
+    .ant-menu {
+        box-shadow: 2px 0 20px 0 rgba(0, 0, 0, .1);
+        border-radius: 0;
+        .ant-menu-item {
+            font-size: 12px;
+        }
+        .ant-menu-item-active {
+            background-color: @body-background-color;
+            a,
+            span {
+                color: @text-color;
+            }
+        }
+        .ant-menu-item-selected {
+            background-color: @body-background-color;
+            a,
+            span {
+                color: @blue;
+            }
+        }
+    }
+}
+
+// biz
+.biz-content {
+    & > * {
+        padding: @body-paddding;
+        background: #fff;
+    }
+}
+
+// menu-item
+#react-app,
+.ant-menu-submenu-popup {
+    .ant-menu {
+        &.ant-menu-inline {
+            .ant-menu-item,
+            .ant-menu-submenu-title {
+                width: 100%;
+            }
+        }
+        .ant-menu-item,
+        .ant-menu-submenu-title {
+            margin: 0;
+            line-height: 50px;
+            height: 50px;
+            a,
+            span {
+                color: @text-color;
+            }
+            &:hover {
+                background-color: @body-background-color;
+            }
+            .anticon {
+                min-width: 16px;
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+// login & register
+#react-app {
+    .user-login,
+    .user-register {
+        background-color: @body-background-color;
+        background-image: url(/static/img/ai2bImg/user-login.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+        background-size: contain;
+        & > .ant-form {
+            border-radius: @border-radius-small;
+            padding: @body-paddding 0;
+            width: 340px;
+            background: #fff;
+            box-shadow: 0 5px 30px 0 rgba(5, 8, 27, .1);
+            .du-form-item-title {
+                margin-bottom: 20px;
+                h2 {
+                    font-size: 30px;
+                    color: @text-color;
+                }
+            }
+            .ant-col-offset-4 {
+                margin: 0 30px 10px;
+                width: calc(100% - 60px);
+                .ant-form-item-children {
+                    width: 100%;
+                }
+                .ant-btn,
+                .ant-input {
+                    border-radius: @border-radius-large;
+                    line-height: 40px;
+                    height: 40px;
+                }
+                .ant-input:not(:first-child) {
+                    padding-left: 55px;
+                    background-color: @body-background-color;
+                    border: none;
+                }
+                .ant-input-prefix {
+                    font-size: 18px;
+                    color: #999;
+                }
+            }
+        }
+    }
+}

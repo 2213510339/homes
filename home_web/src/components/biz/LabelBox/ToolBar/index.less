@@ -1,0 +1,44 @@
+@import "../constants/variable.less";
+
+.gdbox-toolbar {
+    .gdbox-toolbar-box {
+        overflow: hidden;
+        padding: 0;
+        .toolbar-item {
+            float: left;
+            width: 35px;
+            display: block;
+            padding: 3px 0;
+            cursor: pointer;
+            background-color: #EAF6FE;
+            color: @page-theme;
+            text-align: center;
+            margin: 5px;
+            line-height: 1.7;
+            list-style: none;
+            .toolbar-tip {
+                display: block;
+                font-size: 12px;
+            }
+        }
+        .toolbar-item:hover {
+            background-color: #d2ecfd;
+        }
+        .toolbar-item-active {
+            color: #fff;
+            background-color: @page-theme;
+        }
+        .toolbar-item-active:hover {
+            background-color: @page-theme;
+        }
+        .toolbar-item-disable {
+            cursor: not-allowed;
+            color: #ACA899;
+            background-color: #F5F5F5;
+        }
+        .toolbar-item-disable:hover {
+            color: #ACA899;
+            background-color: #F5F5F5;
+        }
+    }
+}

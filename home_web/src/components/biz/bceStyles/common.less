@@ -1,0 +1,371 @@
+@blue: #108CEE;
+@blue-hover: #209BFD;
+@blue-light: #eaf6fe;
+@blue-light-hover: #d2ecfd;
+
+body {
+    font-size: 12px;
+    line-height: 1.5em;
+    color: #333;
+    background-color: #E8ECF0;
+    min-width: 1280px;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro SC", "SF Pro Text", "Helvetica Neue", Helvetica, "PingFang SC", "Segoe UI", Roboto, "Hiragino Sans GB", "Arial", "microsoft yahei ui", "Microsoft YaHei", SimSun, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body * {
+    &:not(svg) {
+        font-size: 12px;
+    }
+    .ant-table {
+        .ant-table-thead > tr > th,
+        .ant-table-tbody > tr > td {
+            border-bottom: 0;
+            padding: 10px 16px;
+        }
+        .ant-table-thead > tr > th {
+            border-right: 1px solid #fff;
+            border-radius: 0!important;
+            background: #F6F7FB;
+            font-weight: normal;
+            color: #333;
+        }
+        .ant-table-tbody > tr {
+            border-bottom: 1px solid #ECEFF8;
+            &:hover:not(.ant-table-expanded-row) > td {
+                background: #f5fbff;
+            }
+        }
+    }
+    .ant-pagination-prev,
+    .ant-pagination-next,
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next,
+    .ant-pagination-item {
+        min-width: 30px;
+        height: 30px;
+        line-height: 28px;
+        border-radius: 0;
+        .ant-pagination-item-link {
+            border-radius: 0;
+        }
+    }
+    .ant-radio-input,
+    .ant-checkbox-input {
+        position: absolute;
+    }
+    .ant-checkbox {
+        .ant-checkbox-inner {
+            border-radius: 0;
+        }
+    }
+    .ant-btn {
+        border-radius: 0;
+        padding: 0 10px;
+        height: 30px;
+        line-height: 28px;
+        min-width: 70px;
+        &[disabled],
+        &[disabled]:hover {
+            border-radius: 0;
+            color: #999;
+            background-color: #eceff8;
+        }
+    }
+    .ant-btn-danger {
+        border-radius: 0;
+    }
+    .ant-btn-primary {
+        border-color: @blue;
+        color: #FFF;
+        background: @blue;
+        &:hover {
+            background: @blue-hover;
+            border-color: @blue-hover;
+        }
+    }
+    .ant-btn-normal {
+        border-color: @blue-light;
+        color: @blue;
+        background: @blue-light;
+        &:hover {
+            background: @blue-light-hover;
+            border-color: @blue-light-hover;
+        }
+    }
+    .ant-btn-icon-only {
+        min-width: 0;
+        border-color: @blue-light;
+        color: @blue;
+        background: @blue-light;
+        &:hover {
+            color: @blue;
+            background: @blue-light-hover;
+            border-color: @blue-light-hover;
+        }
+    }
+    .ant-message {
+        .ant-message-notice-content {
+            background: #fff;
+            color: #333;
+            border: 1px solid #ccc;
+            box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .1);
+            border-radius: 0;
+            font-size: 12px;
+            padding: 9px 20px;
+            .anticon {
+                font-size: 12px;
+            }
+        }
+    }
+    .ant-radio-group {
+        .ant-radio-button-wrapper {
+            height: 30px;
+            border-radius: 0;
+            padding: 0 10px;
+            color: #108cee;
+            background-color: @blue-light;
+            border: 0;
+            &:hover {
+                background: @blue-light-hover;
+            }
+        }
+        .ant-radio-button-wrapper-checked {
+            border-color: @blue;
+            background: @blue;
+            &:hover {
+                color: #FFF;
+                background: @blue-hover;
+                border-color: @blue-hover;
+            }
+        }
+    }
+    .ant-input-number,
+    .ant-input {
+        height: 30px;
+        border-radius: 0;
+        font-size: 12px;
+        font-family: 'Microsoft Yahei', Arial, Helvetica, sans-serif;
+        .ant-input-number-input {
+            height: 28px;
+        }
+    }
+    .ant-input-group-wrapper .ant-input-group-addon,
+    .ant-select:not(.ant-select-auto-complete) {
+        border: none;
+        border-radius: 0;
+        background-color: @blue-light;
+        font-size: 12px;
+        .ant-select-selection--single {
+            border: 1px solid @blue-light;
+            height: 30px;
+            background-color: @blue-light;
+            color: @blue;
+            box-shadow: none;
+            .ant-select-selection__placeholder,
+            .ant-select-arrow {
+                color: @blue;
+            }
+            
+        }
+    }
+    .ant-select-selection {
+        min-height: 30px;
+        border-radius: 0;
+        .ant-select-selection__rendered {
+            line-height: 28px;
+        }
+        .ant-select-selection__choice {
+            border-radius: 0;
+        }
+    }
+    .ant-select-dropdown {
+        border-radius: 0;
+        box-shadow: 2px 5px 8px rgba(0, 0, 0, .2);
+        border-left: 1px solid @blue-light;
+        border-right: 1px solid @blue-light;
+        border-bottom: 1px solid @blue-light;
+        .ant-select-dropdown-menu-item {
+            font-size: 12px;
+            text-align: left;
+            border-radius: 0;
+            &:hover {
+                color: #108cee;
+                background-color: @blue-light;
+            }
+        }
+        .ant-select-dropdown-menu-item-selected {
+            font-weight: normal;
+            color: @blue;
+            background-color: #fff;
+        }
+    }
+    .ant-form {
+        label,
+        .ant-form-explain,
+        .ant-form-extra,
+        .ant-form-item-required:before {
+            font-size: 12px;
+        }
+        .ant-form-item {
+            margin: 0;
+            padding: 5px 0;
+        }
+        .ant-form-explain {
+            margin-top: 3px;
+            min-height: 0;
+        }
+        .ant-form-explain-holder {
+            display: none;
+        }
+        .ant-form-item-label {
+            padding-left: 10px;
+            width: 90px;
+            text-align: left;
+        }
+        .ant-form-item-required::before {
+            position: absolute;
+            top: 50%;
+            left: -10px;
+            transform: translate(0, -50%);
+        }
+    }
+    .ant-modal {
+        .ant-modal-content {
+            border-radius: 0!important;
+            .ant-modal-header {
+                position: relative;
+                margin: 0;
+                border: none;
+                padding: 0;
+                width: 100%;
+                height: 40px;
+                color: #333333;
+                background-color: #f6f7fb;
+                .ant-modal-title {
+                    overflow: hidden;
+                    padding: 0 20px;
+                    line-height: 40px;
+                    font-size: 14px;
+                    font-weight: normal;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    color: #333;
+                }
+            }
+            .ant-modal-close-x {
+                height: 40px;
+                line-height: 40px;
+                font-size: 15px;
+            }
+            .ant-modal-body {
+                padding: 20px 30px;
+                .ant-modal-confirm-body {
+                    border-bottom: 1px solid #eceff8;
+                    padding-top: 20px;
+                    padding-bottom: 40px;
+                    .anticon svg {
+                        font-size: 22px;
+                    }
+                    .ant-modal-confirm-title,
+                    .ant-modal-confirm-content {
+                        color: #666;
+                        font-size: 13px;
+                    }
+                }
+            }
+            .ant-modal-footer {
+                margin: 0 30px;
+                border-top: 1px solid #eceff8;
+                padding: 15px 0;
+            }
+            .ant-modal-confirm-btns {
+                margin-top: 15px!important;
+            }
+        }
+    }
+    .ant-tooltip-placement-top,
+    .ant-tooltip-placement-topLeft,
+    .ant-tooltip-placement-topRight {
+        .ant-tooltip-arrow {
+            background-position: 0 -47px;
+            width: 16px;
+            height: 11px;
+            bottom: -3px;
+            margin-left: -8px;
+        }
+    }
+    .ant-tooltip-placement-right,
+    .ant-tooltip-placement-rightTop,
+    .ant-tooltip-placement-rightBottom {
+        .ant-tooltip-arrow {
+            background-position: -43px 0;
+            width: 11px;
+            height: 16px;
+            left: -3px;
+            margin-top: -8px;
+        }
+    }
+    .ant-tooltip-placement-left,
+    .ant-tooltip-placement-leftTop,
+    .ant-tooltip-placement-leftBottom {
+        .ant-tooltip-arrow {
+            background-position: 0 0;
+            width: 11px;
+            height: 16px;
+            right: -3px;
+            margin-top: -8px;
+        }
+    }
+    .ant-tooltip-placement-bottom,
+    .ant-tooltip-placement-bottomLeft,
+    .ant-tooltip-placement-bottomRight {
+        .ant-tooltip-arrow {
+            background-position: 0 -92px;
+            width: 16px;
+            height: 11px;
+            top: -2px;
+            margin-left: -8px;
+        }
+    }
+    .ant-tooltip {
+        .ant-tooltip-arrow {
+            border: none;
+            display: inline-block;
+            background-image: url(./img/tip-arrow-icon.png);
+            background-repeat: no-repeat;
+        }
+        .ant-tooltip-inner {
+            background-color: #fff;
+            color: #333;
+            box-shadow: 0 0 2px 0 #ccc;
+            border-radius: 0;
+            padding: 10px;
+        }
+    }
+    .ant-tabs-bar {
+        .ant-tabs-tab {
+            font-size: 14px;
+        }
+    }
+    .ant-spin,
+    .ant-spin-nested-loading > div > .ant-spin {
+        left: 50%;
+        top: 50%;
+        min-height: 50px;
+        transform: translate(-50%, -50%);
+        background: url(https://bce.bdstatic.com/console/dist/009bbae/dep/inf-style/0.0.0/img/process.gif) center center no-repeat;
+        background-image: url(https://bce.bdstatic.com/console/dist/009bbae/dep/inf-style/0.0.0/img/process.svg), none;
+        background-size: 50px 50px;
+        & .ant-spin-dot {
+            top: -9999px;
+        }
+        & .ant-spin-text {
+            margin-top: 50px;
+        }
+        &.ant-spin-spinning {
+            position: absolute;
+        }
+    }
+}
