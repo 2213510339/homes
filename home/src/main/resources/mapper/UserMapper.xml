@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shj.home.dao.mapper.UserMapper">
+
+
+    <select id="getUserByIds" resultType="com.shj.home.entity.User">
+        Select id, name, age
+        from home_user
+        where
+        id in
+        <foreach collection="ids" item="id" index="index" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+
+    </select>
+
+    <insert id="addUser" parameterType="com.shj.home.entity.User">
+        insert into home_user(name, age)
+        values(#{name}, #{age})
+    </insert>
+</mapper>
