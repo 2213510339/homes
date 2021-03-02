@@ -1,5 +1,6 @@
 package com.shj.home.service;
 
+import com.shj.home.entity.Student;
 import com.shj.home.entity.User;
 
 /**
@@ -12,4 +13,6 @@ import com.shj.home.entity.User;
 public interface UserService {
 
     User getUserById(String id);
+    int updateStudent(Student student);
+    int updateStudent2(Student student);
 }
